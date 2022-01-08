@@ -1,0 +1,15 @@
+# spin up the conatiners
+services:
+  api:
+    build:
+      context: ./docker-app
+      dockerfile: Dockerfile
+    image: node-api-img:1.0.0
+    ports:
+      - "5000:5000"
+      # mapping take jo ma local ma change kro 
+      # wo khud he automate ho docker ma through volumes
+    volumes:
+      - ./docker-app:/app
+    environment:
+      API_KEY: tahaahmedanees2gsksla
